@@ -20,7 +20,7 @@ namespace LinkedList
             linkedList.AddNodeToEnd(b);
             
             Node<int> c = new Node<int>(-111);
-            linkedList.AddNodeToEnd(c);
+            linkedList.AddNodeToEnd(c); 
             
             Node<int> newnNode = new Node<int>(222222);
             linkedList.AddNodeAfter(newnNode, b);
@@ -34,6 +34,9 @@ namespace LinkedList
             //Console.WriteLine();
             //Node<int> target = linkedList.FindeNode(0);
             //Console.WriteLine(target.Data);
+
+            List<int> list = new List<int>();
+            
 
             Console.ReadKey();
 

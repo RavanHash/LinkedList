@@ -106,6 +106,32 @@ namespace LinkedList
                 return currentNode;
             }    
 
+            public void AddRange(LinkedList<T> linkedList)
+            {
+                LinkedList<T> newLinkedList = CopyList(linkedList);
+
+                Last.Next = newLinkedList.Head;
+            }
+
+            public static LinkedList<T> CopyList(LinkedList<T> linkedList)
+            {
+                LinkedList<T> newLinkedList = new LinkedList<T>();
+
+                Node<T> runner1 = linkedList.Head;
+                Node<T> runner2 = newLinkedList.Head;
+                runner2.Data = runner1.Data;
+
+                while (runner1.Next != null)
+                {
+                    runner2.Next = new Node<T>(runner1.Next.Data);
+
+                    runner1 = runner1.Next;
+                    runner2 = runner2.Next;
+                }
+
+                return newLinkedList;
+            }
+
             public void OutputList()
             {
                 Node<T> runner = Head;
